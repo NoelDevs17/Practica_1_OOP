@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Practica_1_OOP
 {
-    public class Persona
+    public class Persona 
     {
         // Atributos
         private string nombre;
@@ -26,9 +26,13 @@ namespace Practica_1_OOP
         // Métodos
         public void MostrarInformacion()
         {
+            Console.WriteLine("Mostrando Informacion");
+            Console.WriteLine();
             Console.WriteLine("Nombre: " + nombre, "Edad: " + edad);
             Console.WriteLine("Fecha Nacimiento: "+ fechaNacimiento);
             Console.WriteLine("Ciudad de residencia: " + ciudad);
+            //CalcularEdadXAnos();
+            
         }
 
         public int CalcularEdadXAnos()
@@ -41,7 +45,7 @@ namespace Practica_1_OOP
             {
                 edadXAnos--;
             }
-
+            Console.WriteLine("Edad en años: " + edadXAnos);
             return edadXAnos;            
         }
     }
