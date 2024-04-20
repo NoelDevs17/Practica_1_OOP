@@ -23,7 +23,8 @@ class Program {
         Console.WriteLine();  //salto de linea
         Console.WriteLine("Ingrese 1. Para crear y Ver informacion de una persona: ");
         Console.WriteLine("Ingrese 2. Para Crear y Ver informacion de un estudiante: ");
-        Console.WriteLine("Ingrese 3. Salir del programa");
+        Console.WriteLine("Ingrese 3. Calcular y mostrar el area de cada figura");
+        Console.WriteLine("Ingrese 4. Salir del programa");
 
         string input = Console.ReadLine();
 
@@ -89,8 +90,18 @@ class Program {
                     break;
 
                     case 3:
-                    return;
+                    // Crear objetos de las clases Figura
+                    Rectangulo rectangulo = new Rectangulo(5, 3);
+                    Circulo circulo = new Circulo(4);
+                    Triangulo triangulo = new Triangulo(6, 4);
 
+                    // Calcular y mostrar el área de cada figura
+                    Console.WriteLine("Área del rectángulo: " + rectangulo.CalcularArea());
+                    Console.WriteLine("Área del círculo: " + circulo.CalcularArea());
+                    Console.WriteLine("Área del triángulo: " + triangulo.CalcularArea());
+                    return;
+                case 4:
+                    break;
             default:
                 Console.WriteLine("Opción no válida. Por favor, seleccione una opción del menú.");
                 break;
