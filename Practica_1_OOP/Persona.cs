@@ -6,24 +6,47 @@ using System.Threading.Tasks;
 
 namespace Practica_1_OOP
 {
-    public class Persona
+    public class Persona 
     {
-        public string Nombre { get; set; }
-        public int  Edad { get; set; }
-        public string  Ciudad { get; set; }
-        public Persona(string nombre, int edad, string ciudad)
+        // Atributos
+        private string nombre;
+        private int edad;
+        private string ciudad;
+        private DateTime fechaNacimiento;
+
+        // Constructor
+        public Persona(string nombre, int edad, string ciudad, DateTime fechaNacimiento)
         {
-
-            Nombre = nombre;
-            Edad = edad;
-            Ciudad = ciudad;
-
+            this.nombre = nombre;
+            this.edad = edad;
+            this.ciudad = ciudad;
+            this.fechaNacimiento = fechaNacimiento;
         }
 
-        Persona persona1 = new Persona("Genesis Santiago", 24, "San pedro de macoris");
+        // Métodos
+        public void MostrarInformacion()
+        {
+            Console.WriteLine("Mostrando Informacion");
+            Console.WriteLine();
+            Console.WriteLine("Nombre: " + nombre, "Edad: " + edad);
+            Console.WriteLine("Fecha Nacimiento: "+ fechaNacimiento);
+            Console.WriteLine("Ciudad de residencia: " + ciudad);
+            //CalcularEdadXAnos();
+            
+        }
 
-        public void ShowInfoPerson() { 
-            Console.WriteLine("Hola" + persona1.Nombre + "Tu Edad es: " + Edad + "y Perteneces a " + Ciudad);
+        public int CalcularEdadXAnos()
+        {
+            DateTime fechaActual = DateTime.Now;
+            int edadXAnos = fechaActual.Year - fechaNacimiento.Year;
+
+            if (fechaActual.Month < fechaNacimiento.Month ||
+          (fechaActual.Month == fechaNacimiento.Month && fechaActual.Day < fechaNacimiento.Day))
+            {
+                edadXAnos--;
+            }
+            Console.WriteLine("Edad en años: " + edadXAnos);
+            return edadXAnos;            
         }
     }
 }
